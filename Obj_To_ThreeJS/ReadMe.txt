@@ -17,6 +17,16 @@ Steps to Use:
 5) Now, click on the "Save File" button to export to the same location where the source file you choose
 was. The file will be suffixed with "_converted.js" string.
 
+Sample ThreeJS Code:
+loader.load( "objects/cone_Converted.js", function( geometry ) {
+	var mat = new THREE.MeshLambertMaterial();
+	var mesh = new THREE.Mesh( geometry, mat );
+	geometry.computeFaceNormals();
+	mesh.position.set(0, 0, 0);
+	var s = 5;
+	mesh.scale.set(s, s, s);
+	scene.add(mesh);
+});
 
 Features:
 Supports multiple meshes(but reads as one mesh only)
